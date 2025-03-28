@@ -1,0 +1,30 @@
+{
+  "name": "auth-api",
+  "description": "Auth API Boilerplate with JWT authentication and username/password login.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "generate": "kubb generate"
+  },
+  "dependencies": {
+    "@fastify/cors": "11.0.0",
+    "@fastify/jwt": "9.1.0",
+    "@fastify/swagger": "9.4.2",
+    "@fastify/swagger-ui": "5.2.2",
+    "@prisma/client": "6.5.0",
+    "bcryptjs": "3.0.2",
+    "dotenv-cli": "8.0.0",
+    "fastify": "5.2.1",
+    "fastify-type-provider-zod": "4.0.2",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bcrypt": "5.0.2",
+    "@types/node": "22.13.11",
+    "prisma": "6.5.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
+  }
+}

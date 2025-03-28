@@ -1,0 +1,39 @@
+@baseUrl=http://localhost:3333
+
+### Create User Account
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "username": "feelss",
+    "password": "felipevk"
+}
+
+
+### Login User
+# @name LoginAPI
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "username": "feels",
+    "password": "felipevk"
+}
+
+### Refresh Token
+# @name refreshAPI
+@refreshToken = {{LoginAPI.response.body.refreshToken}}
+POST {{baseUrl}}/refresh-token
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "refreshToken": "{{refreshToken}}"
+}
+
+### Get Protected Route
+
+@accessToken = {{refreshAPI.response.body.accessToken}}
+GET {{baseUrl}}/protected
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
